@@ -1,0 +1,35 @@
+# Q9 - Comapring
+#
+# Q6 - Tokenization:
+# NLTK:
+#
+# NLTK's word_tokenize function provides a simple way to tokenize text into words.
+# It splits text based on white spaces and punctuation characters, providing a basic tokenization.
+# Output format: List of tokenized words.
+# spaCy:
+#
+# spaCy's tokenization is more sophisticated and context-aware, utilizing statistical models to tokenize text.
+# It tokenizes text into words, punctuation, and other elements like numbers and symbols, providing a more detailed and accurate tokenization.
+# Output format: List of spaCy Token objects, each containing detailed information about the token.
+# Q7 - Lemmatization:
+# NLTK:
+#
+# NLTK's lemmatization relies on WordNet, a lexical database of English, to find the base form (lemma) of words.
+# It provides a straightforward way to lemmatize words but might not be as accurate as spaCy's lemmatization for complex linguistic phenomena.
+# Output format: List of lemmatized words.
+# spaCy:
+#
+# spaCy's lemmatization uses machine learning models trained on large corpora to accurately determine the lemma of words.
+# It supports multiple languages and handles complex linguistic phenomena better than NLTK.
+# Output format: List of lemmatized words or tokens, along with detailed information such as part-of-speech tags.
+# Q8 - Stemming:
+# NLTK:
+#
+# NLTK provides various stemming algorithms like Porter, Lancaster, and Snowball stemmers.
+# It's simple to use and provides decent stemming results for English text.
+# Output format: List of stemmed words.
+# spaCy:
+#
+# spaCy doesn't have a dedicated stemming method, but its lemmatization process can serve as a substitute.
+# While not specifically designed for stemming, spaCy's lemmatization tends to produce similar results to stemming.
+# Output format: List of lemmatized words or tokens.
