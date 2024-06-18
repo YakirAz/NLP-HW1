@@ -1,0 +1,58 @@
+[2024/06/18, 09:00] John: Hey Mary! Good morning.
+[2024/06/18, 09:01] Mary: Morning, John! How are you?
+[2024/06/18, 09:02] John: I'm good, thanks. How about you?
+[2024/06/18, 09:03] Mary: Doing well. Just getting started with work.
+[2024/06/18, 09:05] John: Same here. Have a lot of meetings today.
+[2024/06/18, 09:06] Mary: Oh no! Hope they go smoothly.
+[2024/06/18, 09:07] John: Thanks! What about you? Busy day ahead?
+[2024/06/18, 09:08] Mary: Not too bad. A few projects to wrap up.
+[2024/06/18, 09:10] John: Sounds manageable. Let me know if you need any help.
+[2024/06/18, 09:11] Mary: Will do, thanks!
+
+[2024/06/18, 12:00] John: Hey Mary, did you get a chance to look at the new project brief?
+[2024/06/18, 12:02] Mary: Not yet. Planning to review it after lunch.
+[2024/06/18, 12:03] John: Cool. Let me know if you have any questions.
+[2024/06/18, 12:04] Mary: Will do. Thanks, John!
+[2024/06/18, 12:10] John: What are you having for lunch?
+[2024/06/18, 12:12] Mary: Just a sandwich. You?
+[2024/06/18, 12:13] John: Same here. Quick and easy.
+[2024/06/18, 12:15] Mary: Exactly. Back-to-back meetings make it hard to have a proper lunch.
+[2024/06/18, 12:17] John: I hear you. We should catch up for a proper lunch sometime.
+[2024/06/18, 12:18] Mary: Definitely. Maybe next week?
+
+[2024/06/18, 15:00] John: Hey, how's the project review going?
+[2024/06/18, 15:01] Mary: It's going well. The brief is pretty detailed.
+[2024/06/18, 15:03] John: That's good to hear. Any concerns?
+[2024/06/18, 15:04] Mary: Not really. Just need to align with the team on a few points.
+[2024/06/18, 15:05] John: Makes sense. Let me know if you need any support.
+[2024/06/18, 15:06] Mary: Will do. Appreciate it!
+
+[2024/06/18, 18:00] John: Wrapping up for the day. How about you?
+[2024/06/18, 18:01] Mary: Almost done. Just finishing up some emails.
+[2024/06/18, 18:02] John: Cool. Any plans for the evening?
+[2024/06/18, 18:03] Mary: Just a quiet night in. You?
+[2024/06/18, 18:04] John: Same here. Probably watch a movie.
+[2024/06/18, 18:05] Mary: Sounds good. Any movie recommendations?
+[2024/06/18, 18:06] John: Thinking of watching "Inception" again.
+[2024/06/18, 18:07] Mary: Great choice! Enjoy.
+[2024/06/18, 18:08] John: Thanks! Have a good night, Mary.
+[2024/06/18, 18:09] Mary: You too, John!
+
+[2024/06/18, 21:00] John: Hey, quick question. Did you finalize the report?
+[2024/06/18, 21:01] Mary: Yes, just sent it over. Check your email.
+[2024/06/18, 21:02] John: Got it. Thanks a lot!
+[2024/06/18, 21:03] Mary: No problem. Let me know if you need any changes.
+[2024/06/18, 21:04] John: Will do. Have a good night!
+[2024/06/18, 21:05] Mary: You too!
+
+[2024/06/18, 22:00] John: Just finished watching the movie. It was great.
+[2024/06/18, 22:01] Mary: Glad you enjoyed it!
+[2024/06/18, 22:02] John: Yeah, it's a classic. What did you end up doing?
+[2024/06/18, 22:03] Mary: Just read a book and relaxed.
+[2024/06/18, 22:04] John: Sounds nice. Which book?
+[2024/06/18, 22:05] Mary: "The Night Circus" by Erin Morgenstern.
+[2024/06/18, 22:06] John: Haven't read that one. Is it good?
+[2024/06/18, 22:07] Mary: It's fantastic. Highly recommend it.
+[2024/06/18, 22:08] John: I'll add it to my list. Thanks for the recommendation.
+[2024/06/18, 22:09] Mary: Anytime! Have a good night, John.
+[2024/06/18, 22:10] John: You too, Mary! Sleep well.
