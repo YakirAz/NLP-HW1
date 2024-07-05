@@ -2,12 +2,14 @@ import pandas as pd
 import nltk
 from collections import Counter
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, sent_tokenize
 import spacy
 import time
 import requests
 from bs4 import BeautifulSoup
 from nltk.stem import WordNetLemmatizer, PorterStemmer
+import re  # Added import for regex
+from gensim.models import Word2Vec  # Added import for Word2Vec
 
 # Download necessary NLTK datasets
 nltk.download('stopwords')
@@ -16,7 +18,7 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 
 # Load spaCy model
-nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load('en_core_web_md')  # Changed to 'en_core_web_md' for GloVe embeddings
 
 # Q4 - Load the dataset
 df = pd.read_csv('spam.csv', encoding='ISO-8859-1')
@@ -37,12 +39,12 @@ print(f'Average number of words per message: {average_words_per_message:.2f}')
 
 # Text processing
 stop_words = set(stopwords.words('english'))
+additional_stopwords = {'and', 'or', 'but', 'if', 'while', 'a', 'an', 'the'}
 
 def preprocess_message(message):
     message = message.lower()
-    # Tokenize and remove punctuation
     words = word_tokenize(message)
-    words = [word for word in words if word not in stop_words and word.isalnum()]  # Remove non-alphanumeric
+    words = [word for word in words if word not in stop_words and word not in additional_stopwords and word.isalnum()]
     return words
 
 df['words'] = df['message'].apply(preprocess_message)
@@ -162,7 +164,7 @@ web_stems = nltk_stem(web_tokens)
 print("\nStems from scraped text using NLTK:")
 print(web_stems)
 
-#Q13 - Print word statistics on the scraped data before and after text processing
+# Q13 - Print word statistics on the scraped data before and after text processing
 print("\nWord statistics on the scraped data before text processing:")
 print(f"Total number of words: {len(web_tokens)}")
 print(f"Number of unique words: {len(set(web_tokens))}")
@@ -186,3 +188,84 @@ print("\nWord statistics for WhatsApp data after preprocessing:")
 print(f"Total number of words: {len(whatsapp_words)}")
 print(f"Number of unique words: {len(set(whatsapp_words))}")
 print("5 most common words:", most_common_whatsapp_words)
+
+# Homework 2:
+
+# White Space Tokenizer
+df['whitespace_tokens'] = df['message'].apply(lambda x: x.split())
+
+# Regex Tokenizer
+def regex_tokenizer(text):
+    return re.findall(r'\w+', text)
+
+df['regex_tokens'] = df['message'].apply(regex_tokenizer)
+
+# Word Tokenizer
+df['word_tokens'] = df['message'].apply(word_tokenize)
+
+# Sentence Tokenizer
+df['sentence_tokens'] = df['message'].apply(sent_tokenize)
+
+# Feature Extraction - BOW
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer = CountVectorizer()
+X_bow = vectorizer.fit_transform(df['message'])
+print("\nBag of Words (BOW) feature extraction:")
+print(X_bow.toarray())
+
+# Feature Extraction - TF-IDF
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+tfidf_vectorizer = TfidfVectorizer()
+X_tfidf = tfidf_vectorizer.fit_transform(df['message'])
+print("\nTF-IDF feature extraction:")
+print(X_tfidf.toarray())
+
+# Feature Extraction - Word2Vec
+sentences = df['words'].tolist()
+word2vec_model = Word2Vec(sentences, vector_size=100, window=5, min_count=1, workers=4)
+
+def get_word_vector(words):
+    vectors = []
+    for word in words:
+        if word in word2vec_model.wv:
+            vectors.append(word2vec_model.wv[word])
+    if vectors:
+        return sum(vectors) / len(vectors)
+    else:
+        return None
+
+df['word2vec'] = df['words'].apply(get_word_vector)
+
+# Using spaCy GloVe embeddings
+df['glove'] = df['message'].apply(lambda x: nlp(x).vector)
+
+# CYK Parsing
+from nltk import CFG
+from nltk.parse import ChartParser
+
+grammar = CFG.fromstring("""
+    S -> NP VP
+    NP -> DT NN
+    VP -> VBZ NP | VBZ NN
+    DT -> 'the' | 'a'
+    NN -> 'cat' | 'dog' | 'man' | 'park'
+    VBZ -> 'sees' | 'likes'
+""")
+
+parser = ChartParser(grammar)
+
+sentences = [
+    "the cat sees the dog",
+    "a man likes the park",
+    "the dog sees a cat",
+    "the man likes the dog",
+    "a cat sees a man"
+]
+
+for sentence in sentences:
+    tokens = sentence.split()
+    parses = list(parser.parse(tokens))
+    for tree in parses:
+        print(tree)
